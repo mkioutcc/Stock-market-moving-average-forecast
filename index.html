@@ -100,6 +100,34 @@
             margin: 2rem 0;
             text-align: center;
         }
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .chart-container img:hover {
+            transform: scale(1.02);
+        }
+        figure {
+            margin: 0;
+            padding: 0;
+        }
+        figcaption {
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        @media (max-width: 768px) {
+            figcaption {
+                font-size: 0.9rem;
+            }
+        }
         .two-column {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -182,10 +210,10 @@
             <h3>資料切分</h3>
             <p>將整理好的資料依時間先後劃分為訓練集、驗證集和測試集。由於金融時間序列具有時序相關性，避免隨機洗牌，以確保未來數據不洩漏到過去的訓練中。</p>
             <div class="chart-container">
-                <div>
-                    <p><img src="流程圖.png" alt="資料前處理與切分流程圖"></p>
-                </div>
-                <p>這張圖展示了股票數據處理的簡單流程：從 Yahoo Finance 或台灣證券交易所取得數據，清理錯誤與缺失值，計算移動平均線等特徵，標記未來趨勢（上漲、下跌、穩定），將數據分割為訓練集、驗證集和測試集，最後準備好數據供 AI 進行學習與預測，幫助更準確地預測股票市場趨勢。</p>
+                <figure>
+                    <img src="流程圖.png" alt="資料前處理與切分流程圖" loading="lazy">
+                    <figcaption>這張圖展示了股票數據處理的簡單流程：從 Yahoo Finance 或台灣證券交易所取得數據，清理錯誤與缺失值，計算移動平均線等特徵，標記未來趨勢（上漲、下跌、穩定），將數據分割為訓練集、驗證集和測試集，最後準備好數據供 AI 進行學習與預測，幫助更準確地預測股票市場趨勢。</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -247,10 +275,10 @@
             <p>除了數字指標，也將視覺化比較模型的預測結果。例如，繪製各模型預測的5日均線走勢與實際走勢的對比圖，以直觀展示模型對趨勢的追蹤能力。</p>
             
             <div class="chart-container">
-                <div>
-                    <p><img src="702f75d0-618f-4525-b63f-2a3e2a570bb0.png" alt="黃金交叉預測示意圖"></p>
-                </div>
-                <p>圖中綠色標記點出了黃金交叉的位置，此後股價隨即展現明顯的上升趨勢。透過將模型預測的短期與長期均線繪製在同一圖表上，可以觀察模型是否及時地捕捉到此類關鍵交叉訊號。</p>
+                <figure>
+                    <img src="702f75d0-618f-4525-b63f-2a3e2a570bb0.png" alt="黃金交叉預測示意圖" loading="lazy">
+                    <figcaption>圖中綠色標記點出了黃金交叉的位置，此後股價隨即展現明顯的上升趨勢。透過將模型預測的短期與長期均線繪製在同一圖表上，可以觀察模型是否及時地捕捉到此類關鍵交叉訊號。</figcaption>
+                </figure>
             </div>
         </section>
 
